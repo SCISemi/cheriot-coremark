@@ -103,10 +103,10 @@ char *mem_name[3] = { "Static", "Heap", "Stack" };
    the benchmark will run between 10 to 100 secs
 
 */
-__cheri_compartment("coremark") 
+__cheri_compartment("standalone") 
 #if MAIN_HAS_NOARGC
 MAIN_RETURN_TYPE
-entry(void)
+standalone_main(void)
 {
     int   argc = 0;
     char *argv[1];
