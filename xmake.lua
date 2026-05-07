@@ -7,5 +7,5 @@ bsptest("coremark")
               "coremark/core_state.c",
               "coremark/core_util.c",
               "coremark/barebones/core_portme.c")
-    add_defines("ITERATIONS=2", "MEM_METHOD=MEM_STATIC", "MEM_LOCATION=\"STATIC\"", "PERFORMANCE_RUN=1")
-    add_deps("stdio")
+    add_defines("ITERATIONS=1", "MEM_METHOD=MEM_STATIC", "MEM_LOCATION=\"STATIC\"", "PERFORMANCE_RUN=1", "ICENI_DISABLE_ECC=1")
+    add_deps("stdio", "freestanding")

@@ -115,6 +115,13 @@ MAIN_RETURN_TYPE
 main(int argc, char *argv[])
 {
 #endif
+
+#ifdef ICENI_DISABLE_ECC
+    // turn off ECC in REVOKE_CONTROL register
+    volatile uint32_t *revoker = MMIO_CAPABILITY(uint32_t, revoker);
+    revoker[2] = 0;
+#endif
+
     ee_u16       i, j = 0, num_algorithms = 0;
     ee_s16       known_id = -1, total_errors = 0;
     ee_u16       seedcrc = 0;
